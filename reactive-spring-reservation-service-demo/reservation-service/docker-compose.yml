@@ -1,0 +1,13 @@
+version: "3.1"
+services:
+  mongo:
+    image: mongo:latest
+    hostname: localhost
+    ports:
+      - 27017:27017
+  app:
+    image: reservation-service:latest
+    ports:
+      - 8080:8080
+    links:
+      - mongo
